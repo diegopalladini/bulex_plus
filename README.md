@@ -1,12 +1,13 @@
-# 💊 Bulex MVP
+# 💊 Bulex Plus
 
-Protótipo funcional de um aplicativo de leitura de bulas de medicamentos via QR Code, desenvolvido como Prova de Conceito (PoC) para a disciplina de Projeto Integrador, do curso de Análise e Desenvolvimento de Sistemas do Senac.
+Entrega Final: Outubro/Novembro de 2026
+Versão atualizada de um aplicativo de leitura de bulas de medicamentos via QR Code, desenvolvido ao longo do ano de 2026 para a disciplina de Projeto Integrador, do curso de Análise e Desenvolvimento de Sistemas do Senac.
 
-Vídeo de apresentação do Bulex: https://youtube.com/shorts/VB7UIOA00hM
+Vídeo de apresentação do Bulex: 
 
 
 ```
-# GRUPO 06
+# GRUPO 02
 ├── Amaury Serpa Santos Neto
 ├── Diego Paladini Machado
 ├── Diogo Oliveira Rodrigues
@@ -63,8 +64,8 @@ bulex_mvp/
 
 ```bash
 # Clone o repositório
-git clone https://github.com/diegopalladini/bulex_mvp.git
-cd bulex_mvp
+git clone https://github.com/diegopalladini/bulex_plus.git
+cd bulex_plus
 
 # Crie e ative o ambiente virtual
 python -m venv venv
