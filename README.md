@@ -135,7 +135,7 @@ Acesse no navegador: **http://127.0.0.1:8000**
 
 - Este é um protótipo funcional. A leitura de QR Code é simulada por um campo de entrada manual de ID.
 - O banco de dados é criado automaticamente na primeira execução via `lifespan` do FastAPI.
-- Fontes grandes e layout simplificado foram adotados intencionalmente para garantir acessibilidade (persona Sr. João).
+- Fontes grandes e layout amigável para a 3ª idade foram adotados intencionalmente para garantir acessibilidade (persona Sr. João).
 
 ## 🧪 Prova de Conceito (POC)
 
