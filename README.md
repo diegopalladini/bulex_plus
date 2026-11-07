@@ -92,7 +92,7 @@ uvicorn main:app --reload
 
 Acesse no navegador: **http://127.0.0.1:8000**
 
-(ou na web: **https://bulex-mvp.onrender.com**)
+(ou na web: **https://bulex-plus-mvp.onrender.com**)
 
 ---
 
