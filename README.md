@@ -1,4 +1,4 @@
-    # 💊 Bulex Plus
+# 💊 Bulex Plus
 
 Entrega Final: Outubro/Novembro de 2026
 Versão atualizada de um aplicativo de leitura de bulas de medicamentos via QR Code, desenvolvido ao longo do ano de 2026 para a disciplina de Projeto Integrador, do curso de Análise e Desenvolvimento de Sistemas do Senac.
@@ -15,6 +15,76 @@ Vídeo de apresentação do Bulex:
 ├── Murilo Luzzi Do Couto
 ├── Ricardo Bertoldo
 ```
+
+---
+
+## 📱 Como testar em 1 minuto
+
+Acesse o app publicado: **https://bulex-mvp.onrender.com**
+
+> ⏳ O app está hospedado no plano gratuito do Render. Se ficar um tempo sem acesso, o **primeiro carregamento pode levar até 1 minuto**. Depois disso, fica rápido.
+
+### Opção 1: Escanear com o celular (experiência real)
+
+Simula o Sr. João apontando a câmera para o QR Code da embalagem do remédio.
+
+1. Deixe esta página do README aberta na tela do computador.
+2. Abra a **câmera do celular** (não precisa instalar nenhum app).
+3. Aponte para um dos QR Codes abaixo e toque no link que aparecer.
+4. A bula simplificada do medicamento abre no celular. Toque em **"Ler a bula completa"** para ver todas as informações.
+
+<table>
+  <tr>
+    <td align="center">
+      <img src="docs/qrcodes/medicamento-1.png" width="170" alt="QR Code do medicamento 1 - Losartana Potássica"><br>
+      <b>1</b> · Losartana Potássica
+    </td>
+    <td align="center">
+      <img src="docs/qrcodes/medicamento-2.png" width="170" alt="QR Code do medicamento 2 - Amoxicilina"><br>
+      <b>2</b> · Amoxicilina
+    </td>
+    <td align="center">
+      <img src="docs/qrcodes/medicamento-3.png" width="170" alt="QR Code do medicamento 3 - Dipirona"><br>
+      <b>3</b> · Dipirona
+    </td>
+    <td align="center">
+      <img src="docs/qrcodes/medicamento-4.png" width="170" alt="QR Code do medicamento 4 - Metformina"><br>
+      <b>4</b> · Metformina
+    </td>
+    <td align="center">
+      <img src="docs/qrcodes/medicamento-5.png" width="170" alt="QR Code do medicamento 5 - Atenolol"><br>
+      <b>5</b> · Atenolol
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="docs/qrcodes/medicamento-6.png" width="170" alt="QR Code do medicamento 6 - Sinvastatina"><br>
+      <b>6</b> · Sinvastatina
+    </td>
+    <td align="center">
+      <img src="docs/qrcodes/medicamento-7.png" width="170" alt="QR Code do medicamento 7 - Omeprazol"><br>
+      <b>7</b> · Omeprazol
+    </td>
+    <td align="center">
+      <img src="docs/qrcodes/medicamento-8.png" width="170" alt="QR Code do medicamento 8 - Paracetamol"><br>
+      <b>8</b> · Paracetamol
+    </td>
+    <td align="center">
+      <img src="docs/qrcodes/medicamento-9.png" width="170" alt="QR Code do medicamento 9 - Tramadol"><br>
+      <b>9</b> · Tramadol
+    </td>
+    <td align="center">
+      <img src="docs/qrcodes/medicamento-10.png" width="170" alt="QR Code do medicamento 10 - Famotidina"><br>
+      <b>10</b> · Famotidina
+    </td>
+  </tr>
+</table>
+
+### Opção 2: Digitar o número no computador
+
+1. Abra **https://bulex-mvp.onrender.com**.
+2. Digite o número de um medicamento (de **1 a 10**, conforme a tabela acima) e clique em **"Simular Leitura de QR Code"**.
+3. Para ver a tela de erro, digite um número que não existe, como **99**.
 
 ---
 
@@ -46,6 +116,10 @@ bulex_plus/
 ├── main.py              # Aplicação FastAPI (rotas e lógica)
 ├── database.py          # Criação e seed do banco de dados
 ├── requirements.txt     # Dependências Python
+├── scripts/
+│   └── gerar_qrcodes.py # Gera os QR Codes de docs/qrcodes (uso em desenvolvimento)
+├── docs/
+│   └── qrcodes/         # QR Codes de cada medicamento (usados neste README)
 ├── bulex.db             # Banco de dados SQLite (gerado automaticamente, não versionado)
 ├── dados/
 │   └── bulas.json       # Conteúdo da bula completa de cada medicamento
