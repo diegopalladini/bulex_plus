@@ -1,4 +1,4 @@
-# 💊 Bulex Plus
+    # 💊 Bulex Plus
 
 Entrega Final: Outubro/Novembro de 2026
 Versão atualizada de um aplicativo de leitura de bulas de medicamentos via QR Code, desenvolvido ao longo do ano de 2026 para a disciplina de Projeto Integrador, do curso de Análise e Desenvolvimento de Sistemas do Senac.
@@ -20,9 +20,9 @@ Vídeo de apresentação do Bulex:
 
 ## 🎯 Jornada do Usuário
 
-**Persona:** Sr. João, 67 anos, é um paciente hipertenso que acaba de receber uma novo prescrição em uma consulta ambulatorial. Ele tem dificuldade com termos técnicos e letras pequenas
+**Persona:** Sr. João, 67 anos, é um paciente hipertenso que acaba de receber uma nova prescrição em uma consulta ambulatorial. Ele tem dificuldade com termos técnicos e letras pequenas
 
-**Problema:** Bulas de medicamentos são difíceis de ler (letra pequena, linguagem técnica, informações desorganizadas).
+**Problema:** Bulas de medicamentos são complicadas de ler (letra pequena, linguagem técnica, informações desorganizadas em resumo; alguns laboratórios não dão a importância necessária às bulas).
 
 **Solução:** O usuário escaneia o QR Code da embalagem e recebe as informações do medicamento de forma clara, acessível e com tipografia ampliada.
 
