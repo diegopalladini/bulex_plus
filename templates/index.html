@@ -1,44 +1,152 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bulex - Escaneamento</title>
-    <style>
-        body { font-family: sans-serif; background: #f7f2e7; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
-        .camera-box { width: 90%; max-width: 400px; background: #f7f2e7; padding: 30px; border-radius: 20px; text-align: center; box-shadow: 0 10px 25px rgba(0,0,0,0.8); }
-        .scanner-visual { width: 100%; height: 200px; background: #333; border-radius: 10px; margin-bottom: 20px; display: flex; align-items: center; justify-content: center; border: 4px solid #9b1b30; position: relative; overflow: hidden; }
-        .scanner-visual::after { content: ""; position: absolute; width: 100%; height: 2px; background: #ff0000; top: 0; left: 0; animation: scan 2s infinite linear; }
-        @keyframes scan { from { top: 0; } to { top: 100%; } }
-        input[type="number"] { background: #e4c1b0; color: #333; width: 80%; padding: 12px; font-size: 1.2rem; border: 2px solid #f7f2e7; border-radius: 8px; margin-bottom: 15px; }
-        button { background: #9b1b30; color: #f7f2e7; border: none; padding: 15px 30px; border-radius: 8px; font-size: 1.1rem; cursor: pointer; width: 85%; }
-        p { color: #333; font-size: 0.9rem; }
-    </style>
-</head>
-<body>
-    <div class="camera-box">
-        <h1>Simulador Bulex Plus</h1>
-        <div class="scanner-visual">
-             <span style="color: white; font-size: 3rem;">📷</span>
-        </div>
-        <p><strong>Contexto:</strong> O usuário aponta a câmera para o QR Code da prescrição médica*</p>
-        
-        <form id="scanForm">
-            <input type="number" id="medId" placeholder="Digite o ID (Ex: 1 ou 2)" required>
-            <button type="submit">Simular Leitura de QR Code</button>
-        </form>
-        
-        <p style="margin-top: 20px; font-style: italic; font-size: 0.75rem">
-            *Este campo substitui a leitura automática da câmera neste MVP.
-        </p>
-    </div>
+{% extends "base.html" %}
 
+{% block titulo %}Bulex - Escanear remédio{% endblock %}
+
+{% block estilos %}
+        body { display: flex; justify-content: center; align-items: center; min-height: 100vh; padding: 0; }
+        .camera-box { width: 90%; max-width: 400px; background: var(--creme); padding: 30px; border-radius: 20px; text-align: center; box-shadow: 0 10px 25px rgba(0,0,0,0.8); margin: 20px 0; }
+        .camera-box h1 { color: var(--texto); font-size: 2rem; }
+
+        .scanner-visual { width: 100%; min-height: 200px; background: var(--texto); border-radius: 10px; margin-bottom: 20px; display: flex; align-items: center; justify-content: center; border: 4px solid var(--vinho); position: relative; overflow: hidden; transition: border-color 0.2s; }
+        .scanner-visual::after { content: ""; position: absolute; width: 100%; height: 2px; background: #ff0000; top: 0; left: 0; animation: scan 2s infinite linear; }
+        .scanner-visual.ativo::after { display: none; }
+        .scanner-visual.lido { border-color: #2e7d32; }
+        @keyframes scan { from { top: 0; } to { top: 100%; } }
+        .icone-camera { color: white; font-size: 3rem; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+        .scanner-visual.ativo .icone-camera { display: none; }
+        #leitor { width: 100%; }
+        #leitor video { width: 100% !important; display: block; object-fit: cover; }
+
+        .camera-box button { background: var(--vinho); color: var(--creme); border: none; padding: 15px 30px; border-radius: 8px; font-size: 1.2rem; cursor: pointer; width: 85%; }
+        .camera-box button:hover, .camera-box button:focus { background: var(--vinho-escuro); }
+        .camera-box .botao-secundario { background: transparent; color: var(--vinho); border: 2px solid var(--vinho); margin-top: 10px; }
+        .camera-box .botao-secundario:hover, .camera-box .botao-secundario:focus { background: var(--rose-claro); }
+
+        #mensagem { font-size: 1.1rem; margin: 10px 0 0; }
+        #mensagem:empty { display: none; }
+        #mensagem.erro { color: var(--vinho); font-weight: bold; }
+
+        .divisor { display: flex; align-items: center; gap: 10px; margin: 18px 0 12px; color: var(--texto-suave); font-size: 1rem; }
+        .divisor::before, .divisor::after { content: ""; flex: 1; border-top: 1px solid var(--rose); }
+
+        input[type="number"] { background: var(--rose); color: var(--texto); width: 85%; padding: 12px; font-size: 1.2rem; border: 2px solid var(--creme); border-radius: 8px; margin-bottom: 15px; }
+        .camera-box p { font-size: 1rem; }
+{% endblock %}
+
+{% block conteudo %}
+    <div class="camera-box">
+        <h1>Bulex Plus</h1>
+        <p>Aponte a câmera para o QR Code da embalagem do remédio.</p>
+
+        <div class="scanner-visual" id="moldura">
+            <span class="icone-camera" aria-hidden="true">📷</span>
+            <div id="leitor"></div>
+        </div>
+
+        <button type="button" id="botaoCamera">Escanear QR Code</button>
+        <p id="mensagem" role="status" aria-live="polite"></p>
+
+        <div class="divisor">ou digite o número</div>
+
+        <form id="scanForm">
+            <input type="number" id="medId" min="1" placeholder="Número do remédio (ex.: 1)" aria-label="Número do remédio" required>
+            <button type="submit" class="botao-secundario">Abrir bula</button>
+        </form>
+    </div>
+{% endblock %}
+
+{% block scripts %}
+    <script src="https://unpkg.com/html5-qrcode@2.3.8/html5-qrcode.min.js"></script>
     <script>
-        document.getElementById('scanForm').onsubmit = function(e) {
-            e.preventDefault();
-            const id = document.getElementById('medId').value;
+        const moldura = document.getElementById('moldura');
+        const botaoCamera = document.getElementById('botaoCamera');
+        const mensagem = document.getElementById('mensagem');
+        let leitor = null;
+        let lendo = false;
+
+        function mostrarMensagem(texto, erro) {
+            mensagem.textContent = texto;
+            mensagem.className = erro ? 'erro' : '';
+        }
+
+        function abrirMedicamento(id) {
             window.location.href = '/medicamento/' + id;
-        };
+        }
+
+        // Aceita o link do Bulex (https://.../medicamento/3) ou só o número (3).
+        // Usa sempre o endereço atual, para funcionar tanto no Render quanto localmente.
+        function extrairId(texto) {
+            const link = texto.match(/\/medicamento\/(\d+)/);
+            if (link) return link[1];
+            const numero = texto.trim().match(/^\d+$/);
+            return numero ? numero[0] : null;
+        }
+
+        async function pararCamera() {
+            if (leitor && lendo) {
+                try { await leitor.stop(); } catch (e) { /* câmera já parada */ }
+            }
+            lendo = false;
+            moldura.classList.remove('ativo');
+            botaoCamera.textContent = 'Escanear QR Code';
+        }
+
+        async function aoLerCodigo(texto) {
+            const id = extrairId(texto);
+            if (!id) {
+                mostrarMensagem('Este QR Code não é de um remédio do Bulex.', true);
+                return; // continua lendo
+            }
+            moldura.classList.add('lido');
+            if (navigator.vibrate) navigator.vibrate(150);
+            mostrarMensagem('QR Code lido! Abrindo a bula...');
+            await pararCamera();
+            abrirMedicamento(id);
+        }
+
+        async function iniciarCamera() {
+            if (typeof Html5Qrcode === 'undefined') {
+                mostrarMensagem('Não foi possível carregar o leitor. Verifique a internet ou digite o número abaixo.', true);
+                return;
+            }
+            if (!window.isSecureContext) {
+                mostrarMensagem('A câmera só funciona em endereço seguro (https). Digite o número abaixo.', true);
+                return;
+            }
+
+            leitor = leitor || new Html5Qrcode('leitor');
+            moldura.classList.remove('lido');
+            mostrarMensagem('Abrindo a câmera...');
+
+            try {
+                await leitor.start(
+                    { facingMode: 'environment' },
+                    { fps: 10, qrbox: (largura, altura) => {
+                        const lado = Math.floor(Math.min(largura, altura) * 0.7);
+                        return { width: lado, height: lado };
+                    } },
+                    aoLerCodigo,
+                    () => { /* nenhum QR no quadro ainda */ }
+                );
+                lendo = true;
+                moldura.classList.add('ativo');
+                botaoCamera.textContent = 'Parar câmera';
+                mostrarMensagem('Aproxime o QR Code da câmera.');
+            } catch (erro) {
+                await pararCamera();
+                const negado = String(erro).includes('NotAllowed') || String(erro).includes('Permission');
+                mostrarMensagem(negado
+                    ? 'Precisamos da sua permissão para usar a câmera. Libere o acesso nas configurações do navegador ou digite o número abaixo.'
+                    : 'Não encontramos uma câmera neste aparelho. Digite o número abaixo.', true);
+            }
+        }
+
+        botaoCamera.addEventListener('click', () => lendo ? pararCamera() : iniciarCamera());
+
+        document.getElementById('scanForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            await pararCamera();
+            abrirMedicamento(document.getElementById('medId').value);
+        });
     </script>
-</body>
-</html>
+{% endblock %}

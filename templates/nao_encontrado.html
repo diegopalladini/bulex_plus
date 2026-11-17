@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block titulo %}Bulex - Medicamento não encontrado{% endblock %}
+
+{% block estilos %}
+        .container { max-width: 600px; margin-top: 40px; text-align: center; }
+        h1 { font-size: 2rem; }
+{% endblock %}
+
+{% block conteudo %}
+    <div class="container">
+        <span class="badge">BULEX</span>
+        <h1>Medicamento não encontrado</h1>
+        <p>Não encontramos nenhum medicamento com o código <strong>{{ id }}</strong>.</p>
+        <p>Confira o código e tente novamente.</p>
+        <a class="botao" href="/">Voltar ao início</a>
+    </div>
+{% endblock %}

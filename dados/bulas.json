@@ -1,0 +1,257 @@
+{
+  "1": {
+    "como_funciona": "A losartana relaxa os vasos sanguíneos, bloqueando uma substância do corpo (angiotensina II) que faz os vasos se contraírem. Com os vasos mais relaxados, a pressão do sangue diminui.",
+    "contraindicacoes": [
+      "Se você tem alergia à losartana ou a qualquer componente do comprimido.",
+      "Se você está grávida.",
+      "Se você tem diabetes ou problemas nos rins e usa alisquireno (outro remédio para pressão)."
+    ],
+    "precaucoes": [
+      "Avise o médico se tem problemas nos rins ou no fígado.",
+      "Avise o médico se teve vômitos, diarreia ou está desidratado: a pressão pode cair demais.",
+      "Levante-se devagar da cama ou da cadeira, para evitar tontura."
+    ],
+    "interacoes": [
+      "Suplementos de potássio, sal \"light\" (com potássio) e diuréticos que poupam potássio.",
+      "Anti-inflamatórios (como ibuprofeno e diclofenaco), que podem diminuir o efeito do remédio.",
+      "Lítio (usado para transtornos de humor)."
+    ],
+    "armazenamento": "Guarde em temperatura ambiente (entre 15 °C e 30 °C), protegido da luz e da umidade. Mantenha fora do alcance das crianças.",
+    "esqueceu_dose": "Tome assim que lembrar. Se já estiver perto do horário da próxima dose, pule a dose esquecida. Nunca tome duas doses de uma vez.",
+    "reacoes_adversas": [
+      "Mais comuns: tontura, cansaço e pressão baixa.",
+      "Pode aumentar o potássio no sangue (o médico acompanha com exames).",
+      "Rara e grave: inchaço no rosto, lábios, língua ou garganta. Procure atendimento médico imediatamente."
+    ],
+    "superdose": "Pode causar queda forte da pressão, tontura intensa e batimentos do coração muito rápidos ou muito lentos. Procure atendimento médico imediatamente e leve a embalagem do remédio."
+  },
+  "2": {
+    "como_funciona": "A amoxicilina é um antibiótico da família das penicilinas. Ela impede que as bactérias formem a sua parede protetora, e assim elas morrem. Não funciona contra gripe e resfriado, que são causados por vírus.",
+    "contraindicacoes": [
+      "Se você tem alergia à amoxicilina ou a outras penicilinas.",
+      "Se você já teve reação alérgica grave a outros antibióticos, como as cefalosporinas (avise o médico)."
+    ],
+    "precaucoes": [
+      "Tome até o fim do tratamento, mesmo que se sinta melhor antes. Parar cedo pode fazer a infecção voltar.",
+      "Avise o médico se tem problemas nos rins.",
+      "Avise o médico se está com mononucleose (\"doença do beijo\"): pode causar manchas na pele."
+    ],
+    "interacoes": [
+      "Alopurinol (para gota): aumenta a chance de manchas na pele.",
+      "Varfarina (anticoagulante): o médico pode precisar acompanhar seus exames.",
+      "Metotrexato e probenecida.",
+      "Anticoncepcionais: o efeito pode ser reduzido. Use também outro método durante o tratamento."
+    ],
+    "armazenamento": "Guarde as cápsulas em temperatura ambiente (entre 15 °C e 30 °C), protegidas da luz e da umidade. Se for suspensão (líquido), siga as instruções da embalagem depois de preparada. Mantenha fora do alcance das crianças.",
+    "esqueceu_dose": "Tome assim que lembrar e siga os próximos horários normalmente. Se já estiver perto da próxima dose, pule a esquecida. Nunca tome duas doses de uma vez.",
+    "reacoes_adversas": [
+      "Mais comuns: diarreia, enjoo e manchas ou coceira na pele.",
+      "Grave: falta de ar, inchaço no rosto ou na garganta, ou manchas espalhadas pelo corpo. Procure atendimento médico imediatamente.",
+      "Diarreia forte ou com sangue, durante ou depois do tratamento: procure o médico."
+    ],
+    "superdose": "Pode causar enjoo, vômitos e diarreia. Procure atendimento médico e leve a embalagem do remédio."
+  },
+  "3": {
+    "como_funciona": "A dipirona age no cérebro e no corpo diminuindo a sensação de dor e baixando a febre. O efeito costuma começar entre 30 e 60 minutos depois de tomar.",
+    "contraindicacoes": [
+      "Se você tem alergia à dipirona ou a remédios parecidos (pirazolonas).",
+      "Se você já teve problemas no sangue ou na medula óssea, como a queda dos glóbulos brancos (agranulocitose).",
+      "Se você tem porfiria ou deficiência de G6PD (doenças raras do sangue).",
+      "Nos últimos 3 meses de gravidez e durante a amamentação."
+    ],
+    "precaucoes": [
+      "Avise o médico se tem asma ou se já teve crise de asma ou alergia com anti-inflamatórios.",
+      "Pode baixar a pressão. Cuidado se você já tem pressão baixa.",
+      "Não ultrapasse 4 g (4.000 mg) por dia."
+    ],
+    "interacoes": [
+      "Metotrexato e ciclosporina.",
+      "Clorpromazina: pode baixar muito a temperatura do corpo.",
+      "Bebidas alcoólicas."
+    ],
+    "armazenamento": "Guarde em temperatura ambiente (entre 15 °C e 30 °C), protegido da luz e da umidade. Mantenha fora do alcance das crianças.",
+    "esqueceu_dose": "A dipirona é usada quando há dor ou febre. Se esquecer, tome quando precisar, respeitando o intervalo de 6 horas entre as doses. Nunca tome duas doses de uma vez.",
+    "reacoes_adversas": [
+      "Mais comuns: queda da pressão e reações na pele (manchas, coceira).",
+      "Rara e grave: febre, dor de garganta ou feridas na boca durante o uso podem indicar queda dos glóbulos brancos. Pare o remédio e procure o médico imediatamente.",
+      "A urina pode ficar avermelhada. Isso não é perigoso."
+    ],
+    "superdose": "Pode causar enjoo, vômitos, dor na barriga, sonolência e queda da pressão. Procure atendimento médico imediatamente e leve a embalagem do remédio."
+  },
+  "4": {
+    "como_funciona": "A metformina diminui a quantidade de açúcar que o fígado produz e ajuda o corpo a usar melhor a insulina. Assim, o açúcar no sangue fica mais controlado.",
+    "contraindicacoes": [
+      "Se você tem alergia à metformina.",
+      "Se você tem problema grave nos rins ou no fígado.",
+      "Se você tem cetoacidose diabética ou acidose metabólica.",
+      "Se você bebe álcool em excesso ou está muito desidratado.",
+      "Antes de exames com contraste (como tomografia), o médico pode pedir para parar o remédio por alguns dias."
+    ],
+    "precaucoes": [
+      "Em casos raros, pode causar acidose lática: dor muscular forte, falta de ar, sonolência, dor na barriga e vômitos. Se isso acontecer, procure atendimento imediatamente.",
+      "Faça os exames dos rins pedidos pelo médico.",
+      "Em uso por muito tempo, pode baixar a vitamina B12. O médico pode pedir exame."
+    ],
+    "interacoes": [
+      "Bebidas alcoólicas: aumentam o risco de acidose lática.",
+      "Contraste iodado usado em exames de imagem.",
+      "Corticoides e alguns diuréticos, que podem aumentar o açúcar no sangue."
+    ],
+    "armazenamento": "Guarde em temperatura ambiente (entre 15 °C e 30 °C), protegido da luz e da umidade. Mantenha fora do alcance das crianças.",
+    "esqueceu_dose": "Tome a próxima dose no horário normal, junto com a refeição. Não tome duas doses de uma vez para compensar.",
+    "reacoes_adversas": [
+      "Mais comuns: enjoo, diarreia, dor na barriga, falta de apetite e gosto de metal na boca. Costumam melhorar com o tempo.",
+      "Tomar junto com as refeições ajuda a diminuir esses efeitos."
+    ],
+    "superdose": "Pode causar acidose lática, que é uma emergência. Procure atendimento médico imediatamente e leve a embalagem do remédio."
+  },
+  "5": {
+    "como_funciona": "O atenolol é um betabloqueador. Ele faz o coração bater mais devagar e com menos força, o que diminui a pressão e o esforço do coração.",
+    "contraindicacoes": [
+      "Se você tem alergia ao atenolol.",
+      "Se o seu coração bate muito devagar ou você tem bloqueio cardíaco.",
+      "Se você tem insuficiência cardíaca descontrolada ou choque cardiogênico.",
+      "Se você tem problemas graves de circulação nas pernas ou nos braços."
+    ],
+    "precaucoes": [
+      "Não pare de tomar de repente: isso pode piorar problemas do coração. O médico deve reduzir a dose aos poucos.",
+      "Avise o médico se tem asma ou bronquite.",
+      "Se você tem diabetes, o atenolol pode esconder os sinais de açúcar baixo (como tremor e coração acelerado).",
+      "Avise o médico se tem problemas nos rins."
+    ],
+    "interacoes": [
+      "Verapamil e diltiazem (outros remédios para o coração).",
+      "Clonidina e outros remédios para pressão.",
+      "Anti-inflamatórios, que podem diminuir o efeito do remédio."
+    ],
+    "armazenamento": "Guarde em temperatura ambiente (entre 15 °C e 30 °C), protegido da luz e da umidade. Mantenha fora do alcance das crianças.",
+    "esqueceu_dose": "Tome assim que lembrar. Se faltar menos de 8 horas para a próxima dose, pule a esquecida. Nunca tome duas doses de uma vez.",
+    "reacoes_adversas": [
+      "Mais comuns: mãos e pés frios, cansaço, batimentos mais lentos, enjoo e diarreia.",
+      "Procure o médico se sentir falta de ar, inchaço nas pernas ou desmaios."
+    ],
+    "superdose": "Pode causar batimentos muito lentos, pressão muito baixa, falta de ar e desmaio. Procure atendimento médico imediatamente e leve a embalagem do remédio."
+  },
+  "6": {
+    "como_funciona": "A sinvastatina diminui a produção de colesterol pelo fígado. Com isso, baixa o colesterol \"ruim\" (LDL) e ajuda a proteger o coração e os vasos.",
+    "contraindicacoes": [
+      "Se você tem alergia à sinvastatina.",
+      "Se você tem doença ativa no fígado.",
+      "Se você está grávida ou amamentando.",
+      "Se você usa itraconazol, cetoconazol, claritromicina, eritromicina, genfibrozila, ciclosporina ou alguns remédios para HIV."
+    ],
+    "precaucoes": [
+      "Avise o médico se sentir dor, fraqueza ou cãibra nos músculos sem motivo, principalmente com febre ou cansaço. Pode ser um problema muscular sério.",
+      "Evite bebidas alcoólicas em excesso.",
+      "O médico pode pedir exames do fígado."
+    ],
+    "interacoes": [
+      "Suco de toranja (grapefruit) em grande quantidade.",
+      "Amiodarona, anlodipino e diltiazem: o médico pode precisar ajustar a dose.",
+      "Varfarina (anticoagulante)."
+    ],
+    "armazenamento": "Guarde em temperatura ambiente (entre 15 °C e 30 °C), protegido da luz e da umidade. Mantenha fora do alcance das crianças.",
+    "esqueceu_dose": "Pule a dose esquecida e tome a próxima no horário normal, à noite. Nunca tome duas doses de uma vez.",
+    "reacoes_adversas": [
+      "Mais comuns: dor na barriga, prisão de ventre, gases e dor de cabeça.",
+      "Dor muscular sem motivo ou urina escura: procure o médico."
+    ],
+    "superdose": "Procure atendimento médico e leve a embalagem do remédio."
+  },
+  "7": {
+    "como_funciona": "O omeprazol diminui a produção de ácido no estômago. Isso alivia a azia e ajuda na cicatrização de feridas no estômago e no esôfago.",
+    "contraindicacoes": [
+      "Se você tem alergia ao omeprazol ou a remédios parecidos (como pantoprazol).",
+      "Se você usa nelfinavir (remédio para HIV)."
+    ],
+    "precaucoes": [
+      "Procure o médico se tiver perda de peso sem motivo, vômito com sangue, fezes escuras ou dificuldade para engolir.",
+      "O uso por muito tempo pode baixar a vitamina B12 e o magnésio, e aumentar o risco de fraturas. Use pelo tempo indicado pelo médico.",
+      "Engula a cápsula inteira, com água. Não mastigue nem abra."
+    ],
+    "interacoes": [
+      "Clopidogrel (para o coração): o omeprazol pode diminuir o efeito dele.",
+      "Varfarina, metotrexato e alguns remédios para fungos (como cetoconazol).",
+      "Alguns remédios para HIV (como atazanavir)."
+    ],
+    "armazenamento": "Guarde em temperatura ambiente (entre 15 °C e 30 °C), protegido da luz e da umidade. Mantenha fora do alcance das crianças.",
+    "esqueceu_dose": "Tome assim que lembrar. Se já estiver perto da próxima dose, pule a esquecida. Nunca tome duas doses de uma vez.",
+    "reacoes_adversas": [
+      "Mais comuns: dor de cabeça, diarreia, prisão de ventre, enjoo e gases."
+    ],
+    "superdose": "Pode causar sonolência, confusão, visão embaçada, boca seca e coração acelerado. Procure atendimento médico e leve a embalagem do remédio."
+  },
+  "8": {
+    "como_funciona": "O paracetamol age no cérebro diminuindo a sensação de dor e baixando a febre.",
+    "contraindicacoes": [
+      "Se você tem alergia ao paracetamol.",
+      "Se você tem doença grave no fígado."
+    ],
+    "precaucoes": [
+      "Não ultrapasse 4 g (4.000 mg) por dia. Em excesso, o paracetamol pode causar dano grave ao fígado.",
+      "Muitos remédios para gripe e resfriado também têm paracetamol. Leia o rótulo para não tomar em dobro.",
+      "Se você bebe álcool todos os dias, fale com o médico antes de usar."
+    ],
+    "interacoes": [
+      "Bebidas alcoólicas: aumentam o risco de dano ao fígado.",
+      "Varfarina (anticoagulante), em uso frequente de paracetamol.",
+      "Remédios para convulsão (como carbamazepina e fenitoína) e isoniazida."
+    ],
+    "armazenamento": "Guarde em temperatura ambiente (entre 15 °C e 30 °C), protegido da luz e da umidade. Mantenha fora do alcance das crianças.",
+    "esqueceu_dose": "O paracetamol é usado quando há dor ou febre. Se esquecer, tome quando precisar, respeitando o intervalo de 6 horas entre as doses. Nunca tome duas doses de uma vez.",
+    "reacoes_adversas": [
+      "Reações são raras quando usado na dose certa.",
+      "Manchas, bolhas ou descamação na pele: pare o remédio e procure o médico imediatamente."
+    ],
+    "superdose": "A superdose de paracetamol é perigosa mesmo que a pessoa se sinta bem no começo: os sinais de dano ao fígado podem demorar dias para aparecer. Procure atendimento médico imediatamente e leve a embalagem do remédio."
+  },
+  "9": {
+    "como_funciona": "O tramadol é um analgésico que age no sistema nervoso, diminuindo a sensação de dor moderada a forte. É um medicamento de controle especial, vendido somente com retenção da receita.",
+    "contraindicacoes": [
+      "Se você tem alergia ao tramadol.",
+      "Se você bebeu álcool em excesso ou tomou remédios para dormir, calmantes ou outros remédios fortes para dor.",
+      "Se você usa ou usou nos últimos 14 dias antidepressivos do tipo IMAO.",
+      "Se você tem epilepsia não controlada.",
+      "Em crianças menores de 12 anos."
+    ],
+    "precaucoes": [
+      "Pode causar sonolência e tontura. Não dirija nem opere máquinas durante o uso.",
+      "Pode causar dependência. Use apenas pelo tempo e na dose indicados pelo médico.",
+      "Não pare de repente depois de usar por muito tempo. O médico deve reduzir a dose aos poucos.",
+      "Pessoas com mais de 75 anos podem precisar de intervalo maior entre as doses.",
+      "Não ultrapasse 400 mg por dia."
+    ],
+    "interacoes": [
+      "Bebidas alcoólicas, calmantes e remédios para dormir: podem causar sonolência perigosa e respiração lenta.",
+      "Antidepressivos (como fluoxetina e sertralina): risco de reação grave chamada síndrome serotoninérgica.",
+      "Carbamazepina (diminui o efeito do tramadol) e varfarina."
+    ],
+    "armazenamento": "Guarde em temperatura ambiente (entre 15 °C e 30 °C), protegido da luz e da umidade. Mantenha fora do alcance das crianças e em local seguro.",
+    "esqueceu_dose": "Tome quando precisar, respeitando o intervalo mínimo indicado na receita. Nunca tome duas doses de uma vez.",
+    "reacoes_adversas": [
+      "Mais comuns: enjoo, tontura, sonolência, dor de cabeça, prisão de ventre, boca seca e suor.",
+      "Graves: respiração lenta ou difícil, convulsões, agitação com febre e tremores. Procure atendimento médico imediatamente."
+    ],
+    "superdose": "Pode causar pupilas muito pequenas, vômitos, respiração muito lenta, convulsões e perda da consciência. É uma emergência: ligue 192 (SAMU) ou procure o pronto-socorro imediatamente."
+  },
+  "10": {
+    "como_funciona": "A famotidina bloqueia uma substância do corpo (histamina) que estimula o estômago a produzir ácido. Com menos ácido, a azia melhora e as feridas no estômago podem cicatrizar.",
+    "contraindicacoes": [
+      "Se você tem alergia à famotidina ou a remédios parecidos (como cimetidina)."
+    ],
+    "precaucoes": [
+      "Avise o médico se tem problemas nos rins: pode ser preciso ajustar a dose.",
+      "Procure o médico se tiver perda de peso sem motivo, vômito com sangue, fezes escuras ou dificuldade para engolir."
+    ],
+    "interacoes": [
+      "Cetoconazol e itraconazol (para fungos): a famotidina pode diminuir o efeito deles.",
+      "Antiácidos: tome com algumas horas de intervalo."
+    ],
+    "armazenamento": "Guarde em temperatura ambiente (entre 15 °C e 30 °C), protegido da luz e da umidade. Mantenha fora do alcance das crianças.",
+    "esqueceu_dose": "Tome assim que lembrar. Se já estiver perto da próxima dose, pule a esquecida. Nunca tome duas doses de uma vez.",
+    "reacoes_adversas": [
+      "Mais comuns: dor de cabeça, tontura, prisão de ventre e diarreia."
+    ],
+    "superdose": "Procure atendimento médico e leve a embalagem do remédio."
+  }
+}
