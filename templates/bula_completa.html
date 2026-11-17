@@ -1,0 +1,114 @@
+{% extends "base.html" %}
+
+{% block titulo %}Bulex - Bula completa de {{ med.nome }}{% endblock %}
+
+{% block estilos %}
+        .subtitulo { font-size: 1.3rem; color: var(--texto-suave); margin-top: 0; }
+        .indice { background: var(--rose-claro); border-radius: 12px; padding: 10px 20px; margin-top: 20px; }
+        .indice h2 { margin-top: 10px; font-size: 1.4rem; }
+        .indice ol { padding-left: 25px; }
+        .indice li { font-size: 1.2rem; margin-bottom: 8px; }
+        section h2 { color: var(--vinho); border-bottom: 2px solid var(--rose); padding-bottom: 5px; scroll-margin-top: 15px; }
+        li { margin-bottom: 10px; }
+        .topo { font-size: 1.1rem; }
+{% endblock %}
+
+{% block conteudo %}
+{% macro texto_ou_lista(texto) %}
+    {% set itens = texto.split('\n') %}
+    {% if itens | length > 1 %}
+        <ul>
+            {% for item in itens %}<li>{{ item }}</li>{% endfor %}
+        </ul>
+    {% else %}
+        <p>{{ texto }}</p>
+    {% endif %}
+{% endmacro %}
+
+{% set secoes = [
+    ("indicacao", "1. Para que este medicamento é indicado?"),
+    ("funcionamento", "2. Como este medicamento funciona?"),
+    ("contraindicacoes", "3. Quando não devo usar este medicamento?"),
+    ("precaucoes", "4. O que devo saber antes de usar este medicamento?"),
+    ("armazenamento", "5. Onde, como e por quanto tempo posso guardar?"),
+    ("uso", "6. Como devo usar este medicamento?"),
+    ("esquecimento", "7. O que devo fazer quando me esquecer de usar?"),
+    ("reacoes", "8. Quais os males que este medicamento pode me causar?"),
+    ("superdose", "9. O que fazer se alguém usar uma quantidade maior do que a indicada?"),
+] %}
+
+    <div class="container" id="topo">
+        <span class="badge">BULEX</span>
+        <h1>{{ med.nome }}</h1>
+        <p class="subtitulo">Bula completa, em linguagem simples</p>
+
+        <nav class="indice" aria-label="Seções da bula">
+            <h2>Nesta bula</h2>
+            <ol>
+                {% for ancora, titulo in secoes %}
+                <li><a href="#{{ ancora }}">{{ titulo[3:] }}</a></li>
+                {% endfor %}
+            </ol>
+        </nav>
+
+        <section id="indicacao">
+            <h2>{{ secoes[0][1] }}</h2>
+            <p>{{ med.finalidade }}</p>
+        </section>
+
+        <section id="funcionamento">
+            <h2>{{ secoes[1][1] }}</h2>
+            {{ texto_ou_lista(bula.como_funciona) }}
+        </section>
+
+        <section id="contraindicacoes">
+            <h2>{{ secoes[2][1] }}</h2>
+            {{ texto_ou_lista(bula.contraindicacoes) }}
+        </section>
+
+        <section id="precaucoes">
+            <h2>{{ secoes[3][1] }}</h2>
+            {{ texto_ou_lista(bula.precaucoes) }}
+            <h3>Cuidado ao usar junto com:</h3>
+            {{ texto_ou_lista(bula.interacoes) }}
+            <p class="nota">Sempre conte ao médico e ao farmacêutico <strong>todos os remédios</strong> que você usa, inclusive chás, vitaminas e remédios sem receita.</p>
+        </section>
+
+        <section id="armazenamento">
+            <h2>{{ secoes[4][1] }}</h2>
+            {{ texto_ou_lista(bula.armazenamento) }}
+            <p>Confira a data de validade na embalagem. Não use remédio vencido.</p>
+        </section>
+
+        <section id="uso">
+            <h2>{{ secoes[5][1] }}</h2>
+            <p>{{ med.como_tomar }}</p>
+            <p class="nota"><strong>Importante:</strong> esta é a dose mais comum. Siga sempre a dose e os horários indicados na <strong>sua receita</strong>.</p>
+        </section>
+
+        <section id="esquecimento">
+            <h2>{{ secoes[6][1] }}</h2>
+            {{ texto_ou_lista(bula.esqueceu_dose) }}
+        </section>
+
+        <section id="reacoes">
+            <h2>{{ secoes[7][1] }}</h2>
+            {{ texto_ou_lista(bula.reacoes_adversas) }}
+        </section>
+
+        <section id="superdose" class="alerta">
+            <h2>{{ secoes[8][1] }}</h2>
+            {{ texto_ou_lista(bula.superdose) }}
+            <p><strong>Em caso de intoxicação, ligue para 0800 722 6001</strong> (Disque-Intoxicação da Anvisa).</p>
+        </section>
+
+        <section>
+            <a class="botao" href="/medicamento/{{ med.id }}">Voltar ao resumo</a>
+            <a class="botao botao-secundario" href="/">Voltar ao início</a>
+        </section>
+
+        <p class="topo"><a href="#topo">↑ Voltar ao topo</a></p>
+
+        <p class="aviso">Esta bula foi reescrita em linguagem simples a partir das informações das bulas oficiais e <strong>não substitui a orientação do seu médico ou farmacêutico</strong>. Em caso de dúvida, procure um profissional de saúde.</p>
+    </div>
+{% endblock %}
