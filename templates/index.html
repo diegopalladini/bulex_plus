@@ -1,38 +1,39 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bulex - Escaneamento</title>
-    <style>
-        body { font-family: sans-serif; background: #f7f2e7; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
-        .camera-box { width: 90%; max-width: 400px; background: #f7f2e7; padding: 30px; border-radius: 20px; text-align: center; box-shadow: 0 10px 25px rgba(0,0,0,0.8); }
-        .scanner-visual { width: 100%; height: 200px; background: #333; border-radius: 10px; margin-bottom: 20px; display: flex; align-items: center; justify-content: center; border: 4px solid #9b1b30; position: relative; overflow: hidden; }
+{% extends "base.html" %}
+
+{% block titulo %}Bulex - Escaneamento{% endblock %}
+
+{% block estilos %}
+        body { display: flex; justify-content: center; align-items: center; min-height: 100vh; padding: 0; }
+        .camera-box { width: 90%; max-width: 400px; background: var(--creme); padding: 30px; border-radius: 20px; text-align: center; box-shadow: 0 10px 25px rgba(0,0,0,0.8); }
+        .camera-box h1 { color: var(--texto); font-size: 2rem; }
+        .scanner-visual { width: 100%; height: 200px; background: var(--texto); border-radius: 10px; margin-bottom: 20px; display: flex; align-items: center; justify-content: center; border: 4px solid var(--vinho); position: relative; overflow: hidden; }
         .scanner-visual::after { content: ""; position: absolute; width: 100%; height: 2px; background: #ff0000; top: 0; left: 0; animation: scan 2s infinite linear; }
         @keyframes scan { from { top: 0; } to { top: 100%; } }
-        input[type="number"] { background: #e4c1b0; color: #333; width: 80%; padding: 12px; font-size: 1.2rem; border: 2px solid #f7f2e7; border-radius: 8px; margin-bottom: 15px; }
-        button { background: #9b1b30; color: #f7f2e7; border: none; padding: 15px 30px; border-radius: 8px; font-size: 1.1rem; cursor: pointer; width: 85%; }
-        p { color: #333; font-size: 0.9rem; }
-    </style>
-</head>
-<body>
+        input[type="number"] { background: var(--rose); color: var(--texto); width: 85%; padding: 12px; font-size: 1.2rem; border: 2px solid var(--creme); border-radius: 8px; margin-bottom: 15px; }
+        .camera-box button { background: var(--vinho); color: var(--creme); border: none; padding: 15px 30px; border-radius: 8px; font-size: 1.1rem; cursor: pointer; width: 85%; }
+        .camera-box p { font-size: 0.9rem; }
+{% endblock %}
+
+{% block conteudo %}
     <div class="camera-box">
         <h1>Simulador Bulex Plus</h1>
         <div class="scanner-visual">
              <span style="color: white; font-size: 3rem;">📷</span>
         </div>
         <p><strong>Contexto:</strong> O usuário aponta a câmera para o QR Code da prescrição médica*</p>
-        
+
         <form id="scanForm">
             <input type="number" id="medId" placeholder="Digite o ID (Ex: 1 ou 2)" required>
             <button type="submit">Simular Leitura de QR Code</button>
         </form>
-        
+
         <p style="margin-top: 20px; font-style: italic; font-size: 0.75rem">
             *Este campo substitui a leitura automática da câmera neste MVP.
         </p>
     </div>
+{% endblock %}
 
+{% block scripts %}
     <script>
         document.getElementById('scanForm').onsubmit = function(e) {
             e.preventDefault();
@@ -40,5 +41,4 @@
             window.location.href = '/medicamento/' + id;
         };
     </script>
-</body>
-</html>
+{% endblock %}

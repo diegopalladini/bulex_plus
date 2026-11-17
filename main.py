@@ -24,6 +24,21 @@ def busca_medicamento(id_med):
         cursor.execute("SELECT * FROM medicamentos WHERE id = ?", (id_med,))
         return cursor.fetchone()
 
+def busca_bula(id_med):
+    with sqlite3.connect(DB_PATH) as conn:
+        conn.row_factory = sqlite3.Row
+        cursor = conn.cursor()
+        cursor.execute("SELECT * FROM bulas WHERE medicamento_id = ?", (id_med,))
+        return cursor.fetchone()
+
+def pagina_nao_encontrado(request: Request, id: int):
+    return templates.TemplateResponse(
+        request=request,
+        name="nao_encontrado.html",
+        context={"id": id},
+        status_code=404
+    )
+
 @app.get("/", response_class=HTMLResponse)
 async def tela_inicial(request: Request):
     return templates.TemplateResponse(request=request, name="index.html")
@@ -33,10 +48,24 @@ async def ler_bula(request: Request, id: int):
     medicamento = busca_medicamento(id)
 
     if not medicamento:
-        return HTMLResponse(content="<h1>Medicamento não encontrado</h1>", status_code=404)
+        return pagina_nao_encontrado(request, id)
 
     return templates.TemplateResponse(
         request=request,
         name="bula.html",
         context={"med": medicamento}
+    )
+
+@app.get("/medicamento/{id}/bula", response_class=HTMLResponse)
+async def ler_bula_completa(request: Request, id: int):
+    medicamento = busca_medicamento(id)
+    bula = busca_bula(id)
+
+    if not medicamento or not bula:
+        return pagina_nao_encontrado(request, id)
+
+    return templates.TemplateResponse(
+        request=request,
+        name="bula_completa.html",
+        context={"med": medicamento, "bula": bula}
     )

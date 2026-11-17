@@ -42,13 +42,19 @@ Vídeo de apresentação do Bulex:
 ## 📁 Estrutura do Projeto
 
 ```
-bulex_mvp/
-├── main.py          # Aplicação FastAPI (rotas e lógica)
-├── database.py      # Criação e seed do banco de dados
-├── bulex.db         # Banco de dados SQLite (gerado automaticamente)
+bulex_plus/
+├── main.py              # Aplicação FastAPI (rotas e lógica)
+├── database.py          # Criação e seed do banco de dados
+├── requirements.txt     # Dependências Python
+├── bulex.db             # Banco de dados SQLite (gerado automaticamente, não versionado)
+├── dados/
+│   └── bulas.json       # Conteúdo da bula completa de cada medicamento
 └── templates/
-    ├── index.html   # Tela inicial (simulador de QR Code)
-    └── bula.html    # Tela de exibição da bula
+    ├── base.html            # Layout e paleta de cores compartilhados
+    ├── index.html           # Tela inicial (simulador de QR Code)
+    ├── bula.html            # Resumo da bula
+    ├── bula_completa.html   # Bula completa (modelo de bula para o paciente da Anvisa)
+    └── nao_encontrado.html  # Tela de medicamento não encontrado
 ```
 
 ---
@@ -77,22 +83,20 @@ venv\Scripts\activate
 source venv/bin/activate
 
 # Instale as dependências
-pip install fastapi uvicorn jinja2
+pip install -r requirements.txt
 ```
 
 ### Executando
 
 ```bash
-# 1. Crie o banco de dados com os dados iniciais
-python database.py
-
-# 2. Suba o servidor
 uvicorn main:app --reload
 ```
 
+O banco de dados (`bulex.db`) é criado e preenchido automaticamente quando o servidor inicia.
+
 Acesse no navegador: **http://127.0.0.1:8000**
 
-(ou na web: **https://bulex-plus-mvp.onrender.com**)
+(ou na web: **https://bulex-mvp.onrender.com**)
 
 ---
 
@@ -101,7 +105,8 @@ Acesse no navegador: **http://127.0.0.1:8000**
 | Método | Rota | Descrição |
 |--------|------|-----------|
 | GET | `/` | Tela inicial (simulador de QR Code) |
-| GET | `/medicamento/{id}` | Exibe a bula do medicamento pelo ID |
+| GET | `/medicamento/{id}` | Exibe o resumo da bula do medicamento pelo ID |
+| GET | `/medicamento/{id}/bula` | Exibe a bula completa do medicamento |
 
 ---
 
@@ -117,6 +122,22 @@ Acesse no navegador: **http://127.0.0.1:8000**
 | `como_tomar` | TEXT | Posologia |
 | `alerta` | TEXT | Sinais de alerta / efeitos colaterais |
 
+**Tabela: `bulas`** (bula completa, carregada de `dados/bulas.json`)
+
+| Coluna | Tipo | Descrição |
+|--------|------|-----------|
+| `medicamento_id` | INTEGER (PK, FK) | Referência ao medicamento |
+| `como_funciona` | TEXT | Como o medicamento age |
+| `contraindicacoes` | TEXT | Quando não usar |
+| `precaucoes` | TEXT | Cuidados antes de usar |
+| `interacoes` | TEXT | Medicamentos e alimentos que interagem |
+| `armazenamento` | TEXT | Como guardar |
+| `esqueceu_dose` | TEXT | O que fazer se esquecer uma dose |
+| `reacoes_adversas` | TEXT | Efeitos colaterais |
+| `superdose` | TEXT | O que fazer em caso de dose excessiva |
+
+Os campos em lista no JSON são gravados com um item por linha e exibidos como tópicos.
+
 **Dados de teste incluídos (10 medicamentos):**
 - ID 1 → Losartana Potássica (hipertensão)
 - ID 2 → Amoxicilina (infecções)
@@ -127,7 +148,7 @@ Acesse no navegador: **http://127.0.0.1:8000**
 - ID 7 → Omeprazol (problemas estomacais)
 - ID 8 → Paracetamol (dor/febre)
 - ID 9 → Tramadol (dor moderada/intensa)
-- ID 10 → Ranitidina (refluxo gástrico/úlcera)
+- ID 10 → Famotidina (refluxo, gastrite e úlcera)
 
 ---
 
