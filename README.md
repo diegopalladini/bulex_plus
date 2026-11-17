@@ -24,14 +24,17 @@ Acesse o app publicado: **https://bulex-mvp.onrender.com**
 
 > ⏳ O app está hospedado no plano gratuito do Render. Se ficar um tempo sem acesso, o **primeiro carregamento pode levar até 1 minuto**. Depois disso, fica rápido.
 
-### Opção 1: Escanear com o celular (experiência real)
+### Opção 1: Escanear pelo app (experiência real)
 
-Simula o Sr. João apontando a câmera para o QR Code da embalagem do remédio.
+Reproduz o Sr. João apontando a câmera para o QR Code da embalagem do remédio. Os QR Codes abaixo fazem o papel das embalagens.
 
 1. Deixe esta página do README aberta na tela do computador.
-2. Abra a **câmera do celular** (não precisa instalar nenhum app).
-3. Aponte para um dos QR Codes abaixo e toque no link que aparecer.
-4. A bula simplificada do medicamento abre no celular. Toque em **"Ler a bula completa"** para ver todas as informações.
+2. No celular, abra **https://bulex-mvp.onrender.com** e toque em **"Escanear QR Code"**.
+3. Permita o uso da câmera quando o navegador pedir.
+4. Aponte para um dos QR Codes abaixo. A bula abre sozinha, sem digitar nada.
+5. Toque em **"Ler a bula completa"** para ver todas as informações.
+
+> 💡 Também funciona com a webcam do computador (mostrando o QR Code no celular) ou apontando a câmera comum do celular, fora do app, para o QR Code.
 
 <table>
   <tr>
@@ -80,10 +83,10 @@ Simula o Sr. João apontando a câmera para o QR Code da embalagem do remédio.
   </tr>
 </table>
 
-### Opção 2: Digitar o número no computador
+### Opção 2: Digitar o número (sem câmera)
 
 1. Abra **https://bulex-mvp.onrender.com**.
-2. Digite o número de um medicamento (de **1 a 10**, conforme a tabela acima) e clique em **"Simular Leitura de QR Code"**.
+2. Em **"ou digite o número"**, informe o número de um medicamento (de **1 a 10**, conforme a tabela acima) e clique em **"Abrir bula"**.
 3. Para ver a tela de erro, digite um número que não existe, como **99**.
 
 ---
@@ -125,7 +128,7 @@ bulex_plus/
 │   └── bulas.json       # Conteúdo da bula completa de cada medicamento
 └── templates/
     ├── base.html            # Layout e paleta de cores compartilhados
-    ├── index.html           # Tela inicial (simulador de QR Code)
+    ├── index.html           # Tela inicial (leitor de QR Code pela câmera)
     ├── bula.html            # Resumo da bula
     ├── bula_completa.html   # Bula completa (modelo de bula para o paciente da Anvisa)
     └── nao_encontrado.html  # Tela de medicamento não encontrado
@@ -178,7 +181,7 @@ Acesse no navegador: **http://127.0.0.1:8000**
 
 | Método | Rota | Descrição |
 |--------|------|-----------|
-| GET | `/` | Tela inicial (simulador de QR Code) |
+| GET | `/` | Tela inicial (leitor de QR Code pela câmera) |
 | GET | `/medicamento/{id}` | Exibe o resumo da bula do medicamento pelo ID |
 | GET | `/medicamento/{id}/bula` | Exibe a bula completa do medicamento |
 
@@ -228,7 +231,7 @@ Os campos em lista no JSON são gravados com um item por linha e exibidos como t
 
 ## 📌 Observações
 
-- Este é um protótipo funcional. A leitura de QR Code é simulada por um campo de entrada manual de ID.
+- Este é um protótipo funcional. A leitura de QR Code usa a câmera do aparelho pelo navegador (biblioteca [html5-qrcode](https://github.com/mebjas/html5-qrcode)); a imagem é processada no próprio aparelho e não é enviada ao servidor. A câmera exige HTTPS (ou `localhost`). Também é possível digitar o número do medicamento.
 - O banco de dados é criado automaticamente na primeira execução via `lifespan` do FastAPI.
 - Fontes grandes e layout amigável para a 3ª idade foram adotados intencionalmente para garantir acessibilidade (persona Sr. João).
 
@@ -249,6 +252,6 @@ O principal risco técnico é garantir que o sistema consiga recuperar e exibir 
 - A interface apresentou melhor legibilidade em comparação com as bulas tradicionais.
 
 **Limitações**  
-- A leitura de QR Code ainda é simulada por um campo de entrada manual.  
+- ~~A leitura de QR Code ainda é simulada por um campo de entrada manual.~~ Resolvido no Bulex Plus: leitura real pela câmera.  
 - Base de dados expandida com 10 medicamentos comuns, mas pode ser ampliada conforme necessário.  
 - Não houve testes com usuários reais.
