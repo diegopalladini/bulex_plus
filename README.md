@@ -20,7 +20,7 @@ Vídeo de apresentação do Bulex: "EM BREVE"
 
 ## 📱 Como testar em 1 minuto
 
-Acesse o app publicado: **https://bulex-mvp.onrender.com**
+Acesse o app publicado: **https://bulex-plus-mvp.onrender.com/**
 
 > ⏳ O app está hospedado no plano gratuito do Render. Se ficar um tempo sem acesso, o **primeiro carregamento pode levar até 1 minuto**. Depois disso, fica rápido.
 
@@ -29,7 +29,7 @@ Acesse o app publicado: **https://bulex-mvp.onrender.com**
 Reproduz o Sr. João apontando a câmera para o QR Code da embalagem do remédio. Os QR Codes abaixo fazem o papel das embalagens.
 
 1. Deixe esta página do README aberta na tela do computador.
-2. No celular, abra **https://bulex-mvp.onrender.com** e toque em **"Escanear QR Code"**.
+2. No celular, abra **https://bulex-plus-mvp.onrender.com/** e toque em **"Escanear QR Code"**.
 3. Permita o uso da câmera quando o navegador pedir.
 4. Aponte para um dos QR Codes abaixo. A bula abre sozinha, sem digitar nada.
 5. Toque em **"Ler a bula completa"** para ver todas as informações.
@@ -85,7 +85,7 @@ Reproduz o Sr. João apontando a câmera para o QR Code da embalagem do remédio
 
 ### Opção 2: Digitar o número (sem câmera)
 
-1. Abra **https://bulex-mvp.onrender.com**.
+1. Abra **https://bulex-plus-mvp.onrender.com/**.
 2. Em **"ou digite o número"**, informe o número de um medicamento (de **1 a 10**, conforme a tabela acima) e clique em **"Abrir bula"**.
 3. Para ver a tela de erro, digite um número que não existe, como **99**.
 
