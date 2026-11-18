@@ -175,7 +175,7 @@ O banco de dados (`bulex.db`) é criado e preenchido automaticamente quando o se
 
 Acesse no navegador: **http://127.0.0.1:8000**
 
-(ou na web: **https://bulex-mvp.onrender.com**)
+(ou na web: **https://bulex-plus-mvp.onrender.com**)
 
 ---
 
