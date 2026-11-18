@@ -1,9 +1,9 @@
 # 💊 Bulex Plus
 
-Entrega Final: Outubro/Novembro de 2026
+Entrega Final: 23 de Novembro de 2026.
 Versão atualizada de um aplicativo de leitura de bulas de medicamentos via QR Code, desenvolvido ao longo do ano de 2026 para a disciplina de Projeto Integrador, do curso de Análise e Desenvolvimento de Sistemas do Senac.
 
-Vídeo de apresentação do Bulex: 
+Vídeo de apresentação do Bulex: "EM BREVE"
 
 
 ```
@@ -15,7 +15,7 @@ Vídeo de apresentação do Bulex:
 ├── Murilo Luzzi Do Couto
 ├── Ricardo Bertoldo
 ```
-
+> ⚠️ **Aviso importante:** o Bulex Plus é um **protótipo acadêmico**, criado para a disciplina de Projeto Integrador. As informações exibidas **não substituem** a bula oficial do medicamento nem a orientação de um médico ou farmacêutico. Em caso de dúvida sobre o uso de qualquer medicamento, procure um profissional de saúde. Em caso de emergência, ligue para o SAMU (192).
 ---
 
 ## 📱 Como testar em 1 minuto
@@ -24,7 +24,7 @@ Acesse o app publicado: **https://bulex-mvp.onrender.com**
 
 > ⏳ O app está hospedado no plano gratuito do Render. Se ficar um tempo sem acesso, o **primeiro carregamento pode levar até 1 minuto**. Depois disso, fica rápido.
 
-### Opção 1: Escanear pelo app (experiência real)
+### Opção 1: Escanear pelo app (experiência real).
 
 Reproduz o Sr. João apontando a câmera para o QR Code da embalagem do remédio. Os QR Codes abaixo fazem o papel das embalagens.
 
@@ -34,7 +34,7 @@ Reproduz o Sr. João apontando a câmera para o QR Code da embalagem do remédio
 4. Aponte para um dos QR Codes abaixo. A bula abre sozinha, sem digitar nada.
 5. Toque em **"Ler a bula completa"** para ver todas as informações.
 
-> 💡 Também funciona com a webcam do computador (mostrando o QR Code no celular) ou apontando a câmera comum do celular, fora do app, para o QR Code.
+> 💡 Também funciona com a webcam do computador (mostrando o QR Code no celular) ou apontando a câmera comum do celular, fora do app, para o QR Code
 
 <table>
   <tr>
@@ -95,7 +95,7 @@ Reproduz o Sr. João apontando a câmera para o QR Code da embalagem do remédio
 
 **Persona:** Sr. João, 67 anos, é um paciente hipertenso que acaba de receber uma nova prescrição em uma consulta ambulatorial. Ele tem dificuldade com termos técnicos e letras pequenas
 
-**Problema:** Bulas de medicamentos são complicadas de ler (letra pequena, linguagem técnica, informações desorganizadas em resumo; alguns laboratórios não dão a importância necessária às bulas).
+**Problema:** Bulas de medicamentos são complicadas de ler (letra pequena, linguagem técnica, informações desorganizadas em resumo ou informações extensas; alguns laboratórios não dão a importância necessária às bulas).
 
 **Solução:** O usuário escaneia o QR Code da embalagem e recebe as informações do medicamento de forma clara, acessível e com tipografia ampliada.
 
@@ -103,12 +103,14 @@ Reproduz o Sr. João apontando a câmera para o QR Code da embalagem do remédio
 
 ## 🛠️ Tecnologias Utilizadas
 
-| Camada | Tecnologia |
-|--------|------------|
-| Front-end | HTML5, CSS3, Jinja2 Templates |
-| Back-end | Python 3, FastAPI |
-| Banco de Dados | SQLite3 |
-| Servidor | Uvicorn (ASGI) |
+| Camada         | Tecnologia                                         |
+| -------------- | -------------------------------------------------- |
+| Front-end      | HTML5, CSS3, JavaScript, Jinja2 Templates          |
+| Leitor de QR   | html5-qrcode (leitura pela câmera, no navegador)   |
+| Back-end       | Python 3, FastAPI                                  |
+| Banco de Dados | SQLite3                                            |
+| Servidor       | Uvicorn (ASGI)                                     |
+| Hospedagem     | Render (plano gratuito)                            |
 
 ---
 
@@ -214,6 +216,7 @@ Acesse no navegador: **http://127.0.0.1:8000**
 | `superdose` | TEXT | O que fazer em caso de dose excessiva |
 
 Os campos em lista no JSON são gravados com um item por linha e exibidos como tópicos.
+**Fonte do conteúdo das bulas:** [CONFIRMAR COM O GRUPO, ex.: bulário eletrônico da Anvisa]. Última atualização dos dados: [DD/MM/2026].
 
 **Dados de teste incluídos (10 medicamentos):**
 - ID 1 → Losartana Potássica (hipertensão)
@@ -228,6 +231,18 @@ Os campos em lista no JSON são gravados com um item por linha e exibidos como t
 - ID 10 → Famotidina (refluxo, gastrite e úlcera)
 
 ---
+## 🧪 Roteiro de testes sugerido:
+
+| ID | Cenário | Passos | Resultado esperado |
+|---|---|---|---|
+| T01 | Abrir bula por QR Code | Escanear o QR Code do medicamento 1 pelo app | Abre o resumo da Losartana Potássica |
+| T02 | Abrir bula digitando o número | Digitar 1 em "ou digite o número" e clicar em "Abrir bula" | Abre o resumo do medicamento 1 |
+| T03 | Ver a bula completa | No resumo, tocar em "Ler a bula completa" | Exibe todas as informações da bula |
+| T04 | Medicamento inexistente | Digitar 99 e clicar em "Abrir bula" | Exibe a tela "medicamento não encontrado" |
+| T05 | Todos os medicamentos | Abrir os IDs de 1 a 10 | Todos abrem resumo e bula completa sem erro |
+| T06 | Câmera negada | Negar a permissão da câmera | App continua utilizável pela digitação |
+| T07 | Primeiro acesso após inatividade | Abrir o link depois de um tempo sem uso | Carrega em até cerca de 1 minuto |
+
 
 ## 📌 Observações
 
