@@ -3,7 +3,7 @@
 Entrega Final: 23 de Novembro de 2026.
 Versão atualizada de um aplicativo de leitura de bulas de medicamentos via QR Code, desenvolvido ao longo do ano de 2026 para a disciplina de Projeto Integrador, do curso de Análise e Desenvolvimento de Sistemas do Senac.
 
-Vídeo de apresentação do Bulex: "EM BREVE"
+Vídeo de apresentação do Bulex: https://youtube.com/shorts/OLN8WttfBk4?is=PQhAq8022JEXfCv4
 
 
 ```
